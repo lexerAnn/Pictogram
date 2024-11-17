@@ -1,0 +1,82 @@
+[versions]
+agp = "8.5.1"
+converterGson = "2.9.0"
+glide = "4.14.2"
+hiltAndroid = "2.48"
+kotlin = "1.6.10"
+coreKtx = "1.9.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+kotlinxCoroutinesTest = "1.7.1"
+loggingInterceptor = "5.0.0-alpha.2"
+material = "1.12.0"
+activity = "1.9.3"
+constraintlayout = "2.2.0"
+mockitoAndroid = "2.24.5"
+mockitoCore = "5.2.0"
+mockitoCoreVersion = "5.3.1"
+navigationFragmentKtx = "2.5.3"
+okhttpprofiler = "1.0.8"
+org-jetbrains-kotlin-android = "1.9.0"
+kotlinPlugin = "1.8.10"
+pagingRuntimeKtx = "3.3.4"
+rules = "1.6.1"
+runner = "1.6.2"
+runnerVersion = "1.2.0"
+timber = "5.0.1"
+navigation = "2.7.5"
+fragmentTesting = "1.8.5"
+
+
+
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-fragment-testing-manifest = { module = "androidx.fragment:fragment-testing-manifest", version.ref = "fragmentTesting" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
+androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "pagingRuntimeKtx" }
+androidx-rules = { module = "androidx.test:rules", version.ref = "rules" }
+androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroid" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+#Dagger - Hilt
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltAndroid" }
+
+
+mockito-core-v531 = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
+okhttpprofiler = { module = "com.localebro:okhttpprofiler", version.ref = "okhttpprofiler" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "converterGson" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockitoAndroid" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
+androidx-fragment-testing = { group = "androidx.fragment", name = "fragment-testing", version.ref = "fragmentTesting" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "org-jetbrains-kotlin-android" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "kotlinPlugin"  }
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
+
+
+
+
+
+

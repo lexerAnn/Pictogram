@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="vm"
+            type="com.pictogram.presentation.authentication.vm.RegisterViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailTIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/email"
+            app:errorEnabled="true"
+            app:error="@{vm.emailError}"
+            app:hintAnimationEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailTIET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={vm.email}"
+                android:inputType="textPersonName|textCapWords"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:onFocusChanged="@{vm::onFocusChanged}"
+                android:afterTextChanged="@{(view, editable) -> vm.validateEntry(view, editable)}"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ageTIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/age"
+            app:errorEnabled="true"
+            app:error="@{vm.ageError}"
+            app:hintAnimationEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@id/emailTIL"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ageTIET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={vm.age}"
+                android:inputType="number"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:onFocusChanged="@{vm::onFocusChanged}"
+                android:afterTextChanged="@{(view, editable) -> vm.validateEntry(view, editable)}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/password"
+            app:errorEnabled="true"
+            app:error="@{vm.passwordError}"
+            app:hintAnimationEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@id/ageTIL"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordTIET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={vm.password}"
+                android:inputType="textPersonName|textCapWords"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:onFocusChanged="@{vm::onFocusChanged}"
+                android:afterTextChanged="@{(view, editable) -> vm.validateEntry(view, editable)}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/register"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:onClick="@{vm::onRegisterClick}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordTIL" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
