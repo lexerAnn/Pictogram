@@ -14,6 +14,7 @@ import com.pictogram.data.remote.model.request.RegisterRequest
 import com.pictogram.data.remote.model.response.AuthResponse
 import com.pictogram.domain.DataState
 import com.pictogram.domain.UseCases
+import com.pictogram.presentation.authentication.events.NavEvent
 import com.pictogram.utils.BaseViewModel
 import com.pictogram.utils.Validations.isAgeValidCheck
 import com.pictogram.utils.Validations.isEmailValidCheck
@@ -34,6 +35,9 @@ class RegisterViewModel  @Inject constructor(
     private val _registerResponse: MutableLiveData<DataState<AuthResponse>> = MutableLiveData()
     val registerResponse: LiveData<DataState<AuthResponse>> = _registerResponse
 
+    private val _navigationEvent = MutableSharedFlow<NavEvent>()
+    val navigationEvent = _navigationEvent.asSharedFlow()
+
     var email = ObservableField<String>()
     var password = ObservableField<String>()
     var age = ObservableField<String>()
@@ -45,6 +49,13 @@ class RegisterViewModel  @Inject constructor(
     private var isEmailValid = false
     private var isPasswordValid = false
     private var isAgeValid = false
+
+
+    fun onBackPress(view: View){
+        viewModelScope.launch {
+            _navigationEvent.emit(NavEvent.NavigateBack)
+        }
+    }
 
     fun onRegisterClick(view: View) {
         val context = view.context

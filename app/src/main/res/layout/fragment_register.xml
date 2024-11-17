@@ -17,6 +17,17 @@
         android:layout_height="match_parent"
         android:padding="20dp">
 
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:onClick="@{vm::onBackPress}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailTIL"
@@ -29,7 +40,7 @@
             app:error="@{vm.emailError}"
             app:hintAnimationEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back"
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
